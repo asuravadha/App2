@@ -15,6 +15,20 @@ namespace App2
         public Page2()
         {
             InitializeComponent();
+            WebView.Source = "https://www.google.com/";
+        }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            await progress.ProgressTo(0.7, 100, Easing.SpringIn);
+        }
+        protected void OnNavigating(object sender,WebNavigatingEventArgs e)
+        {
+            progress.IsVisible = true;
+        }
+        protected void OnNavigated(object sender, WebNavigatingEventArgs e)
+        {
+            progress.IsVisible = false;
         }
     }
 }
