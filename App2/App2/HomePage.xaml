@@ -10,5 +10,6 @@
     <local:Page2 Title="Page2"/>
     <local:Page3 Title="Page3"/>
     <local:GridPage Title="grid"/>
+    <local:Page5 Title="page 5 "/>
     <local:ListviewPage Title="List view"/>
 </TabbedPage>
