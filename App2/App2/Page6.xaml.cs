@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using App2.Model;
+using SQLite;
+
 namespace App2
 {
 
@@ -16,5 +19,29 @@ namespace App2
         {
             InitializeComponent();
         }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Post post = new Post()
+            {
+                Title = title_name.Text
+            };
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<Post>();
+                int rows = conn.Insert(post);
+           
+                if (rows > 0)
+                {
+                    DisplayAlert("Success", "Title successfully inserted " + rows, "ok");
+                }
+                else
+                {
+                    DisplayAlert("Failure", "Title  insertion failed ", "ok");
+                }
+            }
+            
+        }
+        
     }
 }

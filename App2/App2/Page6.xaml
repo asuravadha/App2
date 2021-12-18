@@ -3,22 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App2.Page6">
 
-        <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
-        <Entry x:Name="FirstName" Placeholder="First Name"></Entry>
-        <Entry x:Name="LastName" Placeholder="Last Name"></Entry>
-        <Entry Keyboard="Chat"/>
-        <Entry x:Name="Email" Placeholder="Email" Keyboard="Email"></Entry>
-        <Entry x:Name="Password" Placeholder="Password" IsPassword="True"></Entry>
-        <Entry Placeholder="COnfirm Password" IsPassword="True"></Entry>
-        <DatePicker x:Name="DOB"></DatePicker>
-        <Label Text="Address"></Label>
-        <Editor x:Name="Address"></Editor>
-                <StackLayout Orientation="Horizontal">
-        <Button Text="Sign U" ></Button>
-        <Button Text="show" ></Button>
-    </StackLayout>
-        <Label Text="Already havge account ?Signin" TextColor="Blue"></Label>
-    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="title_name" Placeholder="Enter something"/>
+        </StackLayout>
+    </ContentPage.Content>
 
 
 
