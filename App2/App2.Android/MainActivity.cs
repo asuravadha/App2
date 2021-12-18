@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using System.IO;
 
 namespace App2.Droid
 {
@@ -16,7 +17,10 @@ namespace App2.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            string dbName = "xamarin_db.sqlite";
+            string folderpath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string fullpath = Path.Combine(folderpath, dbName);
+            LoadApplication(new App(fullpath));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
