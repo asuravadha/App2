@@ -12,5 +12,6 @@
     <local:GridPage Title="grid"/>
     <local:Page5 Title="page 5 "/>
     <local:Page6 Title="registration"/>
+    <local:MapPage Title="Maps"/>
     <local:ListviewPage Title="List view"/>
 </TabbedPage>

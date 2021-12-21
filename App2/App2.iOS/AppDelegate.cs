@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-
 using Foundation;
 using UIKit;
 
@@ -24,6 +23,9 @@ namespace App2.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            //integrating maps in ios
+            Xamarin.FormsMaps.Init();
+      
             string dbName = "xamarin_db.sqlite";
             string folderpath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),"..","Library");
             string fullpath = Path.Combine(folderpath, dbName);
